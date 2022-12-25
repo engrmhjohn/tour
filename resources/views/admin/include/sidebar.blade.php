@@ -122,20 +122,22 @@
                 </a>
                 <div class="collapse" id="ppm" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-{{--                        <a class="nav-link" href="{{ route('add-privacy-policy-info') }}">Privacy Policy Add</a>--}}
                         <a class="nav-link" href="{{ route('manage-privacy-policy-info') }}">Privacy Policy Manage</a>
                     </nav>
                 </div>
+                @if(Auth::user()->id==2)
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#am" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Admin Manage Module
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="am" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('manage-admin')}}">Admin Manage</a>
-                    </nav>
-                </div>
+                    <div class="collapse" id="am" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="{{ route('manage-admin')}}">Admin Manage</a>
+                        </nav>
+                    </div>
+                @else
+                @endif
             </div>
         </div>
         <div class="sb-sidenav-footer">
